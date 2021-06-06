@@ -1,0 +1,22 @@
+.mat-drawer-container {
+  height: calc(100% - 91px);
+}
+.mat-drawer-side {
+  background-color: purple;
+  width: 60px;
+  color: #ffe399;
+  padding: 10px;
+}
+.side-link {
+  mat-icon {
+    font-size: 30px;
+    cursor: pointer;
+
+    &:hover, :focus {
+      color: #8091bd;
+    }
+  }
+}
+.active-link {
+  color: #8091bd;
+}
