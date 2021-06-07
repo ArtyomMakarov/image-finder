@@ -10,7 +10,7 @@ export class ShortUrlInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
-    let fullRequest: string = 'https://www.flickr.com/services/rest/?method=flickr.test.echo&name=value' + request.url;
+    let fullRequest: string = 'https://www.flickr.com/services/rest/?method=flickr.photos.search&' + request.url;
     const dupReq: HttpRequest<unknown> = request.clone({ url: fullRequest });
     return next.handle(dupReq).pipe(
       tap(() => {

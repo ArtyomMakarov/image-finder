@@ -2,12 +2,14 @@
   height: calc(100% - 91px);
 }
 .mat-drawer-side {
-  background-color: purple;
-  width: 60px;
+  background-color: #673ab7;
+  width: 80px;
   color: #ffe399;
   padding: 10px;
 }
+
 .side-link {
+  text-align: center;
   mat-icon {
     font-size: 30px;
     cursor: pointer;
@@ -18,5 +20,5 @@
   }
 }
 .active-link {
-  color: #8091bd;
+  color: #4f75ff;
 }

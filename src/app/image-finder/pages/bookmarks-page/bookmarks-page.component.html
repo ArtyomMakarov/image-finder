@@ -1,1 +1,6 @@
-<p>bookmarks-page works!</p>
+<div class="wrapper">
+  <div class="no-images-text" *ngIf="bookmarks.length == 0">
+    <p>You nothing bookmarked. To add photos go to Search page.</p>
+  </div>
+  <app-photo-card [(bookmarks)]="bookmarks"></app-photo-card>
+</div>

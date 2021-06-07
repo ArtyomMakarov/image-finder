@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <mat-card class="photo-card" *ngFor="let photo of photos || bookmarks">
+    <img mat-card-image [src]="photo.url" alt="photo" class="photo-card__img">
+
+    <button mat-raised-button color="primary" class="photo-card__button" (click)="bookmarkPhoto(photo)"
+            *ngIf="!bookmarks; else elseBlock">Bookmark it!</button>
+    <ng-template #elseBlock>
+      <button mat-raised-button color="secondary" class="photo-card__button" (click)="removeFromBookmarks(photo)">Remove it!</button>
+    </ng-template>
+
+    <mat-card-title class="photo-card__title">{{photo.title}}</mat-card-title>
+  </mat-card>
+</div>

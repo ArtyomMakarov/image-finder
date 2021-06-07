@@ -1,1 +1,10 @@
-<p>search-page works!</p>
+<div class="search-page">
+  <div class="search-page__input">
+    <input matInput type="text" class="search-input" #searchInput title="search_field" placeholder="Find images">
+  </div>
+  <div class="no-images-text" *ngIf="!photos">
+    <p>No images here. Would  you try to search for anything else?</p>
+  </div>
+  <app-paginator *ngIf="photos" [searchKeyword]="searchKeyword" (photos)="photos = $event"></app-paginator>
+  <app-photo-card [photos]="photos"></app-photo-card>
+</div>
