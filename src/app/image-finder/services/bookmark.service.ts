@@ -12,11 +12,7 @@ export class BookmarkService {
     this.bookmarks.push(photo);
     this.localStorageService.set('bookmarks', this.bookmarks);
   }
-
-  // public getBookmarks(): Array<IPhotoCard> {
-  //   return this.bookmarks;
-  // }
-
+  
   public removeFromBookmarks(photo: IPhotoCard): void {
     this.bookmarks = this.bookmarks.filter(bookmark => bookmark.id !== photo.id);
     this.localStorageService.set('bookmarks', this.bookmarks);
