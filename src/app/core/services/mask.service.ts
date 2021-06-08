@@ -13,7 +13,7 @@ export class MaskService {
 
   public displayMask(): void {
       fromEvent(document, 'mousemove')
-        .pipe(debounceTime(1000))    //1 minute in milliseconds
+        .pipe(debounceTime(3600000))    //1 minute in milliseconds
         .subscribe(e => {
           this.showMask$.next(true);
         });
