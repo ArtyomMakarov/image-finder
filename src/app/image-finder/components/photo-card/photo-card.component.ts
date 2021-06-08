@@ -1,6 +1,7 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, OnDestroy} from '@angular/core';
 import {BookmarkService} from '../../services/bookmark.service';
 import {IPhotoCard} from '../../models/photo-card.model';
+import {MaskService} from '../../../core/services/mask.service';
 
 @Component({
   selector: 'app-photo-card',
@@ -12,19 +13,23 @@ export class PhotoCardComponent implements OnInit {
   @Input() bookmarks!: Array<IPhotoCard>;
   @Output() bookmarksChange = new EventEmitter<Array<IPhotoCard>>();
 
-  constructor(private bookmarkService: BookmarkService) { }
 
-  ngOnInit(): void {
+  constructor(private bookmarkService: BookmarkService, private maskService: MaskService) { }
+
+  ngOnInit() {
   }
+
 
   public bookmarkPhoto(photo: IPhotoCard): void {
     this.bookmarkService.addToBookmarks(photo);
+    this.maskService.displayMask();
   }
 
   public removeFromBookmarks(photo: IPhotoCard): void {
     this.bookmarks = this.bookmarks.filter(bookmark => bookmark.id !== photo.id);
     this.bookmarkService.removeFromBookmarks(photo);
     this.bookmarksChange.emit(this.bookmarks);
+    this.maskService.displayMask();
   }
 
 }
