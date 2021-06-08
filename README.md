@@ -1,5 +1,6 @@
 # ImageFinder
 ** Run `npm run start` to start project
+
 Deploy: https://heuristic-banach-64a890.netlify.app
 
 ## Description
@@ -11,7 +12,7 @@ Deploy: https://heuristic-banach-64a890.netlify.app
 
 -Create local storage service for saving bookmarks;
 
--Used Angular Material;
+-Use Angular Material;
 
 -Implement user activity logic, after clicking  bookmark button or remove bookmark
  and user doesn`t move mouse, mask service will run and start 1 minute deboucing. 
